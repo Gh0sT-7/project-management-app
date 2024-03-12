@@ -1,9 +1,9 @@
 
 export default function Sidebar() {
     return (
-        <div
+        <aside
             id="sidebar"
-            className="flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 rounded-tr-xl h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-20 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 p-4 transition-all duration-200 ease-in-out translate-x-0"
+            className="flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 rounded-r-xl h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-1/3 md:w-72 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 px-8 py-16 transition-all duration-200 ease-in-out translate-x-0"
         >
             <div className="flex justify-between mb-10 pr-3 sm:px-2">
                 <svg width="32" height="32" viewBox="0 0 32 32">
@@ -31,9 +31,9 @@ export default function Sidebar() {
             </div>
 
             <div className="space-y-8">
-                <h3 className="text-white text-xl font-semibold">Projects</h3>
+                <h3 className="text-stone-50 text-xl font-semibold">Projects</h3>
 
-                <button className="bg-slate-500 hover:bg-slate-600 text-slate-800 font-semibold py-2 px-4 rounded transition-all duration-200 ease-in-out">+ Add Project</button>
+                <button className="px-4 py-2 rounded bg-slate-600 hover:bg-slate-700 text-xs md:text-base text-stone-200 hover:text-stone-50 font-semibold  transition-all duration-200 ease-in-out">+ Add Project</button>
 
                 <div>
                     <ul className="mt-3">
@@ -43,6 +43,6 @@ export default function Sidebar() {
                     </ul>
                 </div>
             </div>
-        </div>
+        </aside>
     )
 }
