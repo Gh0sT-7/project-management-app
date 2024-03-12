@@ -1,10 +1,12 @@
 import Sidebar from "../partials/Sidebar";
 import Project from '../components/Project';
+import NewProject from "../components/NewProject";
 
 function Dashboard() {
     return (
         <div className="flex h-screen overflow-hidden">
             <Sidebar />
+            <NewProject />
 
             <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
                 <main>
