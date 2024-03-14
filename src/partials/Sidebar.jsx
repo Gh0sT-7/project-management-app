@@ -1,3 +1,4 @@
+import Button from '../components/Button.jsx'
 
 export default function Sidebar() {
     return (
@@ -33,7 +34,7 @@ export default function Sidebar() {
             <div className="space-y-8">
                 <h3 className="text-stone-50 text-xl font-semibold">Projects</h3>
 
-                <button className="px-4 py-2 rounded bg-slate-600 hover:bg-slate-700 text-xs md:text-base text-stone-200 hover:text-stone-50 font-semibold  transition-all duration-200 ease-in-out">+ Add Project</button>
+                <Button>+ Add Project</Button>
 
                 <div>
                     <ul className="mt-3">
