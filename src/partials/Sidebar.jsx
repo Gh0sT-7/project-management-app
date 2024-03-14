@@ -34,7 +34,7 @@ export default function Sidebar() {
             <div className="space-y-8">
                 <h3 className="text-stone-50 text-xl font-semibold">Projects</h3>
 
-                <Button>+ Add Project</Button>
+                <Button color="default" variant="filled">+ Add Project</Button>
 
                 <div>
                     <ul className="mt-3">
