@@ -1,13 +1,28 @@
+import { useState } from "react";
+
 import Sidebar from "../partials/Sidebar";
 import Project from '../partials/Project/Project';
 import NewProject from "../partials/Project/NewProject";
 import NoProjectSelected from "../partials/Project/NoSelectedProject";
 
 function Dashboard() {
+    const [projectsState, setProjectsState] = useState({
+        selectedProjectId: undefined,
+        projects: []
+    });
+
+    function handleNewProject() {
+        setProjectsState(prevState => {
+            return {
+                selectedProjectId: null,
+            };
+        });
+    }
+
     return (
         <div className="flex h-screen overflow-hidden">
             <Sidebar />
-            <NewProject />
+            {/* <NewProject /> */}
             <NoProjectSelected />
 
             {/* <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
