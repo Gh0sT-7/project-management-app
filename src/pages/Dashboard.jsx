@@ -63,12 +63,28 @@ function Dashboard() {
         });
     }
 
+    /**
+     * A function that handles the selection of a project.
+     *
+     * @param {type} id - the project id
+     * @return {type} description of the updated projects state
+     */
+    function handleSelectProject(id) {
+        setProjectsState(prevState => {
+            return {
+                ...prevState,
+                selectedProjectId: id,
+            };
+        });
+    }
 
 
     console.log(projectsState);
 
     // Check the selectedProjectId to determine what content to render
-    let content;
+    const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
+
+    let content = <Project project={selectedProject} />;
 
     if (projectsState.selectedProjectId === null) {
         content = <NewProject onAddingNewProject={handleAddProject} onCancelNewProject={handleCancelAddProject} />;
@@ -81,8 +97,10 @@ function Dashboard() {
             <Sidebar
                 onStartAddProject={handleNewProject}
                 projects={projectsState.projects}
+                onSelectProject={handleSelectProject}
             />
             
+            {/* <Project /> */}
             {content}
 
             {/* <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
