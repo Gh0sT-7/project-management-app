@@ -1,6 +1,6 @@
 import Button from '../components/Button.jsx'
 
-export default function Sidebar({ onStartAddProject }) {
+export default function Sidebar({ onStartAddProject, projects }) {
     return (
         <aside
             id="sidebar"
@@ -41,10 +41,14 @@ export default function Sidebar({ onStartAddProject }) {
                 >+ Add Project</Button>
 
                 <div>
+                    <hr className='opacity-25' />
                     <ul className="mt-3">
-                        <li>
-                            <a href="#" className="rounded text-white bg-slate-700 py-2 px-4">Test</a>
-                        </li>
+                        {projects.map((project) => (
+                            <li key={project.id} className='my-2'>
+                                <Button color="default"
+                                variant="filled">{project.title}</Button>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>

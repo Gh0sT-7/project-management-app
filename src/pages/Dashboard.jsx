@@ -37,13 +37,15 @@ function Dashboard() {
      */
     function handleAddProject(projectData) {
         setProjectsState(prevState => {
+            const projectId = Math.random();
             const newProject = {
                 ...projectData,
-                id: Math.random()
+                id: projectId,
             }
 
             return {
                 ...prevState,
+                selectedProjectId: undefined,
                 projects: [...prevState.projects, newProject]
             };
         });
@@ -62,7 +64,10 @@ function Dashboard() {
 
     return (
         <div className="flex h-screen overflow-hidden">
-            <Sidebar onStartAddProject={handleNewProject} />
+            <Sidebar
+                onStartAddProject={handleNewProject}
+                projects={projectsState.projects}
+            />
             
             {content}
 
