@@ -51,13 +51,27 @@ function Dashboard() {
         });
     }
 
+    /**
+     * Handle the cancelling of adding a new project.
+     */
+    function handleCancelAddProject() {
+        setProjectsState(prevState => {
+            return {
+                ...prevState,
+                selectedProjectId: undefined,
+            };
+        });
+    }
+
+
+
     console.log(projectsState);
 
     // Check the selectedProjectId to determine what content to render
     let content;
 
     if (projectsState.selectedProjectId === null) {
-        content = <NewProject onAddingNewProject={handleAddProject} />;
+        content = <NewProject onAddingNewProject={handleAddProject} onCancelNewProject={handleCancelAddProject} />;
     } else if (projectsState.selectedProjectId === undefined) {
         content = <NoProjectSelected onStartAddProject={handleNewProject} />;
     }

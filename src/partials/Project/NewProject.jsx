@@ -4,7 +4,7 @@ import Input from '../../components/Input.jsx'
 import Button from '../../components/Button.jsx'
 import Modal from '../../components/Modal.jsx';
 
-export default function NewProject({ onAddingNewProject }) {
+export default function NewProject({ onAddingNewProject, onCancelNewProject }) {
     const modal = useRef();
 
     const titleRef = useRef();
@@ -34,23 +34,18 @@ export default function NewProject({ onAddingNewProject }) {
         });
     }
 
-    function handleCancel() {
-        // TODO: Cancel
-    }
-
-
     return (
         <>
             <Modal ref={modal} buttonCaption="Close">
-                <h2 className='text-xl font-bold text-stone-500'>Invalid Input</h2>
-                <p className='text-stone-500 mt-2'>You didn't fill in all the fields!</p>
-                <p className='text-stone-500'>Please make sure you provide a valid title, description and due date.</p>
+                <h2 className='text-xl font-bold text-stone-700'>Invalid Input</h2>
+                <p className='text-stone-600 mt-2'>You didn't fill in all the fields!</p>
+                <p className='text-stone-600'>Please make sure you provide a valid title, description and due date.</p>
             </Modal>
             <div className="w-[35rem] mt-16 px-8">
                 <menu className='flex items-center justify-end gap-4 my-4'>
                     <li>
                         <Button
-                            onClick={handleCancel}
+                            onClick={onCancelNewProject}
                             color="danger"
                             variant="text"
                             >
