@@ -53,7 +53,7 @@ function Dashboard() {
     let content;
 
     if (projectsState.selectedProjectId === null) {
-        content = <NewProject />;
+        content = <NewProject onAddingNewProject={handleAddProject} />;
     } else if (projectsState.selectedProjectId === undefined) {
         content = <NoProjectSelected onStartAddProject={handleNewProject} />;
     }
