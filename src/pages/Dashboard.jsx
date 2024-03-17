@@ -23,7 +23,28 @@ function Dashboard() {
     function handleNewProject() {
         setProjectsState(prevState => {
             return {
+                ...prevState,
                 selectedProjectId: null,
+            };
+        });
+    }
+
+    /**
+     * A function that handles adding a new project to the projects state.
+     *
+     * @param {Object} projectData - The data of the project to be added (title, description, due date).
+     * @return {Object} The updated projects state with the new project added.
+     */
+    function handleAddProject(projectData) {
+        setProjectsState(prevState => {
+            const newProject = {
+                ...projectData,
+                id: Math.random()
+            }
+
+            return {
+                ...prevState,
+                projects: [...prevState.projects, newProject]
             };
         });
     }
