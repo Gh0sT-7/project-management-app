@@ -8,11 +8,40 @@ export default function NewProject() {
     const descriptionRef = useRef();
     const dueDateRef = useRef();
 
+    function handleSave() {
+        const enteredTitle = titleRef.current.value;
+        const enteredDescription = descriptionRef.current.value;
+        const enteredDueDate = dueDateRef.current.value;
+
+        // TODO: Validation
+    }
+
+    function handleCancel() {
+        // TODO: Cancel
+    }
+
+
     return (
         <div className="w-[35rem] mt-16 px-8">
             <menu className='flex items-center justify-end gap-4 my-4'>
-                <li><Button variant="text" color="danger">Cancel</Button></li>
-                <li><Button variant="text" color="success">Save</Button></li>
+                <li>
+                    <Button
+                        onClick={handleCancel}
+                        color="danger"
+                        variant="text"
+                    >
+                        Cancel
+                    </Button>
+                </li>
+                <li>
+                    <Button
+                        onClick={handleSave}
+                        color="success"
+                        variant="text"
+                    >
+                        Save
+                    </Button>
+                </li>
             </menu>
 
             <div>
