@@ -49,6 +49,8 @@ function Dashboard() {
         });
     }
 
+    console.log(projectsState);
+
     // Check the selectedProjectId to determine what content to render
     let content;
 

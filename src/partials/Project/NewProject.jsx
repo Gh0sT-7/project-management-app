@@ -51,9 +51,9 @@ export default function NewProject({ onAddingNewProject }) {
             </menu>
 
             <div>
-                <Input ref={titleRef} label="Title" />
+                <Input ref={titleRef} label="Title" type="text" />
                 <Input ref={descriptionRef} label="Description" isTextarea={true} />
-                <Input ref={dueDateRef} label="Due Date" />
+                <Input ref={dueDateRef} label="Due Date" type="date" />
             </div>
         </div>
     )
