@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Input from '../../components/Input.jsx'
 import Button from '../../components/Button.jsx'
 
-export default function NewProject() {
+export default function NewProject({ onAddingNewProject }) {
     const titleRef = useRef();
     const descriptionRef = useRef();
     const dueDateRef = useRef();
@@ -14,6 +14,12 @@ export default function NewProject() {
         const enteredDueDate = dueDateRef.current.value;
 
         // TODO: Validation
+
+        onAddingNewProject({
+            title: enteredTitle,
+            description: enteredDescription,
+            dueDate: enteredDueDate
+        });
     }
 
     function handleCancel() {
