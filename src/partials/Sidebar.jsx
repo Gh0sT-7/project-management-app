@@ -1,10 +1,10 @@
 import Button from '../components/Button.jsx'
 
-export default function Sidebar() {
+export default function Sidebar({ onStartAddProject }) {
     return (
         <aside
             id="sidebar"
-            className="flex flex-col absolute z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 rounded-r-xl h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-1/3 md:w-72 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 px-8 py-16 transition-all duration-200 ease-in-out translate-x-0"
+            className="flex flex-col z-40 left-0 top-0 lg:static lg:left-auto lg:top-auto lg:translate-x-0 rounded-r-xl h-screen overflow-y-scroll lg:overflow-y-auto no-scrollbar w-64 lg:w-1/3 md:w-72 lg:sidebar-expanded:!w-64 2xl:!w-64 shrink-0 bg-slate-800 px-8 py-16 transition-all duration-200 ease-in-out translate-x-0"
         >
             <div className="flex justify-between mb-10 pr-3 sm:px-2">
                 <svg width="32" height="32" viewBox="0 0 32 32">
@@ -34,7 +34,11 @@ export default function Sidebar() {
             <div className="space-y-8">
                 <h3 className="text-stone-50 text-xl font-semibold">Projects</h3>
 
-                <Button color="default" variant="filled">+ Add Project</Button>
+                <Button 
+                    onClick={onStartAddProject}
+                    color="default"
+                    variant="filled"
+                >+ Add Project</Button>
 
                 <div>
                     <ul className="mt-3">
