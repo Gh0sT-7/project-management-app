@@ -12,7 +12,8 @@ function Dashboard() {
     // This allows the component to kep track of the selected project and list of projects.
     const [projectsState, setProjectsState] = useState({
         selectedProjectId: undefined,
-        projects: []
+        projects: [],
+        tasks: [],
     });
 
     /**
@@ -93,6 +94,17 @@ function Dashboard() {
             };
         });
     }
+
+
+    function handleAddTask() {
+        // TODO: Add task functionality
+    }
+
+    function handleDeleteTask() {
+        // TODO: Delete task functionality
+    }
+
+
 
 
     console.log(projectsState);
