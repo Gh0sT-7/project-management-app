@@ -1,7 +1,7 @@
 import Button from "../../components/Button";
 import NewTask from "./NewTask";
 
-export default function Tasks({ onAdd, onDelete }) {
+export default function Tasks({ tasks, onAdd, onDelete }) {
     return (
         <>
             <section>
@@ -14,15 +14,20 @@ export default function Tasks({ onAdd, onDelete }) {
                 
 
 
-                <p className="my-4 text-stone-800">This project does not have any tasks yet.</p>
+                {tasks.length === 0 && (
+                    <p className="my-4 text-stone-800">This project does not have any tasks yet.</p>
+                )}
 
-                {/* TODO: Add task functionality  */}
-                    
-                <ul>
-                    <li>Task 1</li>
-                    <li>Task 2</li>
-                    <li>etc...</li>
-                </ul>
+                {tasks.length > 0 && (
+                    <ul className="mt-8 p-4 rounded-md bg-stone-100">
+                        {tasks.map((task) => (
+                            <li key={task.id} className="flex justify-between items-center my-4">
+                                <span>{task.text}</span>
+                                <Button color="danger" variant="text">Clear Task</Button>
+                            </li>
+                        ))}
+                    </ul>
+                )}   
             </section>
         </>
     )

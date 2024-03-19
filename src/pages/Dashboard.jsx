@@ -96,8 +96,20 @@ function Dashboard() {
     }
 
 
-    function handleAddTask() {
-        // TODO: Add task functionality
+    function handleAddTask(text) {
+        setProjectsState(prevState => {
+            const taskId = Math.random();
+            const newTask = {
+                text: text,
+                projectId: prevState.selectedProjectId,
+                id: taskId,
+            }
+
+            return {
+                ...prevState,
+                tasks: [newTask, ...prevState.tasks]
+            };
+        });
     }
 
     function handleDeleteTask() {
@@ -115,6 +127,7 @@ function Dashboard() {
     let content = (
         <Project
             project={selectedProject}
+            tasks={projectsState.tasks}
             onDelete={handleDeleteProject}
             onAddNewTask={handleAddTask}
             onDeleteTask={handleDeleteTask}
