@@ -112,7 +112,15 @@ function Dashboard() {
     // Check the selectedProjectId to determine what content to render
     const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
 
-    let content = <Project project={selectedProject} onDelete={handleDeleteProject} />;
+    let content = (
+        <Project
+            project={selectedProject}
+            onDelete={handleDeleteProject}
+            onAddNewTask={handleAddTask}
+            onDeleteTask={handleDeleteTask}
+
+        />
+    );
 
     if (projectsState.selectedProjectId === null) {
         content = <NewProject onAddingNewProject={handleAddProject} onCancelNewProject={handleCancelAddProject} />;

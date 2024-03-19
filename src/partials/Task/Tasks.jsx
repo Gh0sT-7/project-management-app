@@ -1,7 +1,7 @@
 import Button from "../../components/Button";
 import NewTask from "./NewTask";
 
-export default function Tasks() {
+export default function Tasks({ onAdd, onDelete }) {
     return (
         <>
             <section>
@@ -10,7 +10,7 @@ export default function Tasks() {
                     <Button color="default" variant="filled">+ Create Task</Button>
                 </div>
 
-                <NewTask />
+                <NewTask onAdd={onAdd} />
                 
 
 

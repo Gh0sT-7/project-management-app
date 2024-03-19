@@ -1,7 +1,7 @@
 import Button from "../../components/Button";
 import Tasks from "../Task/Tasks";
 
-export default function Project({project, onDelete}) {
+export default function Project({project, onDelete, onAddNewTask, onDeleteTask}) {
     const formattedDate = new Date(project.dueDate).toLocaleString('en-GB', {
         year: 'numeric',
         month: 'short',
@@ -25,7 +25,7 @@ export default function Project({project, onDelete}) {
 
             <hr className="my-4" />
 
-            <Tasks />            
+            <Tasks onAdd={onAddNewTask} onDelete={onDeleteTask} />            
         </div>
     );
 }

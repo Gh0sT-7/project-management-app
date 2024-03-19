@@ -2,11 +2,17 @@ import { useState } from 'react';
 
 import Input from "../../components/Input"
 
-export default function NewTask() {
+export default function NewTask({ onAdd }) {
     const [enteredTask, setEnteredTask] = useState();
 
     function handleChange(event) {
         setEnteredTask(event.target.value);
+    }
+
+    function handleClick() {
+        onAdd(enteredTask);
+        setEnteredTask('');
+        console.log(enteredTask);
     }
 
     return (
@@ -17,7 +23,12 @@ export default function NewTask() {
                 value={enteredTask}
             />
             {/* <input type="text" className="w-64 px-2 py-1 rounded-sm bg-stone-200" /> */}
-            <button className="text-stone-700 hover:text-stone-950">Add Task</button>
+            <button 
+                onClick={handleClick}
+                className="text-stone-700 hover:text-stone-950"
+            >
+                + Add Task
+            </button>
         </div>
     )
 }
