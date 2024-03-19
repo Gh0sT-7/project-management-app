@@ -22,7 +22,7 @@ function Dashboard() {
      * @return {object} The updated projects state
      */
     function handleNewProject() {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             return {
                 ...prevState,
                 selectedProjectId: null,
@@ -37,7 +37,7 @@ function Dashboard() {
      * @return {Object} The updated projects state with the new project added.
      */
     function handleAddProject(projectData) {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             const projectId = Math.random();
             const newProject = {
                 ...projectData,
@@ -56,7 +56,7 @@ function Dashboard() {
      * Handle the cancelling of adding a new project.
      */
     function handleCancelAddProject() {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             return {
                 ...prevState,
                 selectedProjectId: undefined,
@@ -71,7 +71,7 @@ function Dashboard() {
      * @return {type} description of the updated projects state
      */
     function handleSelectProject(id) {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             return {
                 ...prevState,
                 selectedProjectId: id,
@@ -86,7 +86,7 @@ function Dashboard() {
      * @return {object} The updated projects state after deleting the selected project.
      */
     function handleDeleteProject() {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             return {
                 ...prevState,
                 selectedProjectId: undefined,
@@ -97,7 +97,7 @@ function Dashboard() {
 
 
     function handleAddTask(text) {
-        setProjectsState(prevState => {
+        setProjectsState((prevState) => {
             const taskId = Math.random();
             const newTask = {
                 text: text,
@@ -112,8 +112,13 @@ function Dashboard() {
         });
     }
 
-    function handleDeleteTask() {
-        // TODO: Delete task functionality
+    function handleDeleteTask(id) {
+        setProjectsState((prevState) => {
+            return {
+                ...prevState,
+                tasks: prevState.tasks.filter((task) => task.id !== id),
+            };
+        });
     }
 
 

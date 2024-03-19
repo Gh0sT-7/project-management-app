@@ -19,7 +19,7 @@ export default function Project({
             <header className="mb-8">
                 <div className="sm:flex sm:justify-between sm:items-center">
                     <h1 className="text-3xl font-bold">{project.title}</h1>
-                    <Button onDelete={onDelete} color="danger" variant="text">Delete</Button>
+                    <Button onClick={onDelete} color="danger" variant="text">Delete</Button>
                 </div>
                 <span className="mt-2 flex text-sm text-gray-500">{formattedDate}</span>
                 {/* <button onClick={onDelete} className="flex items-center text-sm text-gray-500 hover:text-red-500 hover:bg-red-100 px-4 py-2 rounded transition-all duration-200 ease-in-out">Delete</button> */}
