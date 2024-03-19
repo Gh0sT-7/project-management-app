@@ -6,7 +6,7 @@ const Input = forwardRef(function Input({ label, isTextarea, ...props }, ref) {
     return (
        <p className="flex flex-col gap-2 my-4">
            <label className="text-sm font-semibold text-gray-600">{label}</label>
-            {isTextarea ? <textarea ref={ref} className={formClasses} {...props} /> : <input ref={ref} className={formClasses} {...props} />}
+           {isTextarea ? <textarea ref={ref} className={formClasses} {...props} /> : <input ref={ref} className={formClasses} {...props} />}
        </p>
     );
 });

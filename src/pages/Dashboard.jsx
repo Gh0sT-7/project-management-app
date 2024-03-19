@@ -78,13 +78,29 @@ function Dashboard() {
         });
     }
 
+    /**
+     * A function that handles deleting a project.
+     *
+     * @param {void} None
+     * @return {object} The updated projects state after deleting the selected project.
+     */
+    function handleDeleteProject() {
+        setProjectsState(prevState => {
+            return {
+                ...prevState,
+                selectedProjectId: undefined,
+                projects: prevState.projects.filter((project) => project.id !== prevState.selectedProjectId),
+            };
+        });
+    }
+
 
     console.log(projectsState);
 
     // Check the selectedProjectId to determine what content to render
     const selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
 
-    let content = <Project project={selectedProject} />;
+    let content = <Project project={selectedProject} onDelete={handleDeleteProject} />;
 
     if (projectsState.selectedProjectId === null) {
         content = <NewProject onAddingNewProject={handleAddProject} onCancelNewProject={handleCancelAddProject} />;
