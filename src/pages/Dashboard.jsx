@@ -136,7 +136,6 @@ function Dashboard() {
             onDelete={handleDeleteProject}
             onAddNewTask={handleAddTask}
             onDeleteTask={handleDeleteTask}
-
         />
     );
 
@@ -152,6 +151,7 @@ function Dashboard() {
                 onStartAddProject={handleNewProject}
                 projects={projectsState.projects}
                 onSelectProject={handleSelectProject}
+                selectedProjectId={projectsState.selectedProjectId}
             />
             
             {/* <Project /> */}

@@ -53,8 +53,8 @@ export default function Sidebar({
                             let selectedProjectVariant = 'filled'
 
                             if (project.id === selectedProjectId) {
-                                color = 'defaultHighlight'
-                                variant = 'filledHighlight'
+                                selectedProjectColor = 'defaultHighlight'
+                                selectedProjectVariant = 'filledHighlight'
                             }
 
                             return (
